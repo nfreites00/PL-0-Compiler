@@ -1,0 +1,5 @@
+const c = 2;
+var a, b;
+begin
+a := c / -b;
+end.

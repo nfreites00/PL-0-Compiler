@@ -1,0 +1,5 @@
+var a, b;
+begin
+  if a := 8 then a := 9
+  a := b = 19;
+end.

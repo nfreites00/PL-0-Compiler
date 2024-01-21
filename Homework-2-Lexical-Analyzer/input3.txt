@@ -1,0 +1,14 @@
+/* Comment check */
+var exactly11ch;
+const 12345;
+{
+	A+B;
+	X*/* Weird comment check */Y;
+	-
+	<<=<<:=	/* lessym leqsym lessym lessym becomessym */
+	-
+	<:=<+//:= /* lessym becomessym lessym plussym slashsym slashsym becomessym */
+	-
+	123 123456
+	call, if, then, else ... while/do
+}.

@@ -1,0 +1,106 @@
+
+  const_declaration(lexlevel, table, list);
+  var_declaration(lexlevel, table, list);
+  proc_declaration(lexlevel + 1, table, list);
+
+
+
+void const_declaration(int lexlevel, symbol *table, lexeme *list) {
+  if(token == constsym) {
+    do {
+      get_token(list);
+      if(token != identsym)
+        error(4);
+     
+			for (int i = 0; i <= symbol_index; i++) {
+				if(strcmp(identifier, table[i].name) == 0) {
+					if (table[i].mark == 0 && table[i].level == lexlevel)
+						error(21);
+				}
+			}
+
+      get_token(list);
+      if(token != eqlsym) {
+				if(token == becomessym)
+					error(1);
+				else
+					error(3);
+			}
+      if(token != numbersym)
+        error(2);
+
+			symbol_table_add(1, lexlevel, 0, digit, 0, table);
+			set_name(table);
+			symbol_index++;
+			num_symbols++;
+
+      get_token(list);
+    } while (token == commasym);
+
+    if(token != semicolonsym)
+      error(5);
+
+    get_token(list);
+	}
+}
+
+void var_declaration(int lexlevel, symbol *table, lexeme *list) {
+  if(token == varsym)
+    var_cnt = 0;
+    do {
+      get_token(list);
+			printf("token = %d\n", token);
+      if(token != identsym)
+        error(4);
+				
+			for (int i = 0; i <= symbol_index; i++) {
+				if(strcmp(identifier, table[i].name) == 0) {
+					if (table[i].mark == 0 && table[i].level == lexlevel)
+						error(21);
+				}
+			}
+
+    	var_cnt++;
+			symbol_table_add(2, lexlevel, var_cnt + 3, 0, 0, table); // Adds the vars to the symbol table.
+      set_name(table);
+			symbol_index++;
+			num_symbols++;
+			
+      get_token(list);
+			printf("token = %d\n", token);
+    } while (token == commasym);
+
+    if(token != semicolonsym)
+      error(5);
+    get_token(list);
+}
+
+void proc_declaration(int lexlevel, symbol *table, lexeme *list) {
+  if(token == procsym)
+    do {
+      get_token(list);
+      if(token != identsym)
+        error(4);
+
+			for (int i = 0; i <= symbol_index; i++) {
+				if(strcmp(identifier, table[i].name) == 0) {
+					if (table[i].mark == 0 && table[i].level == lexlevel)
+						error(21);
+				}
+			}
+
+			symbol_table_add(3, lexlevel, 0, 0, 0, table); // Adds the procedure to the symbol table.
+			set_name(table);
+			symbol_index++;
+			num_symbols++;
+
+      get_token(list);
+      if(token != semicolonsym)
+        error(5);
+      get_token(list);
+      block_p(lexlevel, table, list);
+      if(token != semicolonsym)
+        error(5);
+      get_token(list);
+    } while(token == procsym);
+}

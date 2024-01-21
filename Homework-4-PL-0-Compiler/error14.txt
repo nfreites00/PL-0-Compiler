@@ -1,0 +1,5 @@
+var a, b;
+begin
+  a := 2;
+  b := (a * 19 + 1;
+end.

@@ -1,0 +1,6 @@
+const c 5;
+var a, b;
+begin
+  a := 3 + c;
+  b := a * 19 + 1;
+end.

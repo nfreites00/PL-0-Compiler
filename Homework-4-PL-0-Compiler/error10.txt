@@ -1,0 +1,5 @@
+var a, b;
+begin
+  a := b;
+  if a = 3 b := 3;
+end.

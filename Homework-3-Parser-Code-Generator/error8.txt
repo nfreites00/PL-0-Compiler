@@ -1,0 +1,6 @@
+const x = 1, b = 4;
+var m, j;
+begin
+	x := b + 7;
+	j := x*2;
+end.

@@ -1,0 +1,5 @@
+var a, b;
+begin
+  a = 3;
+  b = 4;
+end.

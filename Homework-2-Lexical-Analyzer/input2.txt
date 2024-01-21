@@ -1,0 +1,19 @@
+const m = 7, n = 85;  
+var  i,x,y,z,q,r;  
+procedure mult; 
+  var a, b;  
+  { 
+     a := x;  b := y; z := 0;   
+     while b > 0 do    
+     { 
+        if odd x then z := z+a;       
+           a := 2*a; 
+           b := b/2;     
+     }   
+  };
+
+{
+  x := m;
+  y := n;
+  call mult;
+}.

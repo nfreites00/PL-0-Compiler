@@ -1,0 +1,6 @@
+var c, d;
+begin
+  d := 8;
+  while c > 2
+  c := d + 19;
+end.

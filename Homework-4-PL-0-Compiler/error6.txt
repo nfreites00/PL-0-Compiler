@@ -1,0 +1,5 @@
+var a, b;
+begin
+  b := 8;
+  a := b + 19;
+end

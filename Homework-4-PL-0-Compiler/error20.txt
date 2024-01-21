@@ -1,0 +1,13 @@
+procedure x;
+procedure B;
+	var z, y, w;
+	begin
+		y := 1;
+		z := 2;
+		write w;
+		if x > y then
+			write z
+		else
+			write x * y;
+	end;
+end.

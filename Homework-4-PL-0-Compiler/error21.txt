@@ -1,0 +1,14 @@
+var x, y;
+procedure B;
+	var y, w;
+	begin
+		y := 1;
+	end;
+procedure A;
+	var y, x;
+	begin
+		x := 3;
+	end;
+begin
+	x := 7;
+end.

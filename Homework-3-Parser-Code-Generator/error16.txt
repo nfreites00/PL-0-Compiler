@@ -1,0 +1,6 @@
+const t = 2;
+var s, t;
+begin
+  s := 3;
+  t := s + 1;
+end.
